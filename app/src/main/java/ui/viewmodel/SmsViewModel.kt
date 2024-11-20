@@ -8,17 +8,14 @@ import roomDB.model.SmsSaver
 
 class SmsViewModel(private val repository: smsRepository) : ViewModel() {
 
-    // LiveData for all SMS
     val allSms: LiveData<List<SmsSaver>> = repository.allSMS.asLiveData()
 
-    // Function to insert SMS into the database
     fun insertSms(sms: SmsSaver) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.insert(sms)
         }
     }
 
-    // Function to delete SMS from the database
     fun deleteSms(sms: SmsSaver) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.delete(sms)
@@ -26,7 +23,6 @@ class SmsViewModel(private val repository: smsRepository) : ViewModel() {
     }
 }
 
-// ViewModel Factory for Dependency Injection
 class SmsViewModelFactory(private val repository: smsRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(SmsViewModel::class.java)) {

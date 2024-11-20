@@ -38,22 +38,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Inflate the layout using View Binding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize ViewModel
+
         val database = smsRoomDatabase.getDatabase(applicationContext)
         val repository = smsRepository(database.sms_dao())
         val viewModelFactory = SmsViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory)[SmsViewModel::class.java]
 
-        // Set up RecyclerView
         adapter = recycler_view_adapter(emptyList())
         binding.smsListRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.smsListRecyclerView.adapter = adapter
 
-        // Observe SMS data from ViewModel and update the UI
         viewModel.allSms.observe(this) { smsList ->
             adapter.setData(smsList.map { smsSaver ->
                 SmsReader(
@@ -67,7 +64,6 @@ class MainActivity : AppCompatActivity() {
             })
         }
 
-        // Check for SMS permission
         if (ContextCompat.checkSelfPermission(
                 this,
                 Manifest.permission.READ_SMS
@@ -79,7 +75,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Function to fetch SMS data and insert it into the database
     private fun fetchAndDisplaySms() {
         val smsData = fetchSmsData()
         smsData.forEach { smsReader ->
@@ -91,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                 sender = smsReader.sender,
                 smsDescription = smsReader.smsDescription
             )
-            viewModel.insertSms(smsSaver) // Insert each SMS into the database
+            viewModel.insertSms(smsSaver)
         }
     }
 

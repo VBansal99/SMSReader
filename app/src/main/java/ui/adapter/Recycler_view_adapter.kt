@@ -11,7 +11,7 @@ class recycler_view_adapter(private var itemList: List<SmsReader>) :
 
     fun setData(newList: List<SmsReader>) {
         itemList = newList
-        notifyDataSetChanged()  // Notify that data has changed
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ModelViewHolder {
