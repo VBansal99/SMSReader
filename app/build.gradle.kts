@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id ("kotlin-kapt")
 }
 
 android {
@@ -13,7 +14,6 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -49,4 +49,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.core.ktx)
+    implementation (libs.appcompat)
+    implementation (libs.lifecycle.viewmodel)
+    implementation (libs.lifecycle.livedata)
+    implementation (libs.lifecycle.runtime)
+    implementation (libs.room.runtime)
+    kapt (libs.room.compiler)
+    implementation (libs.room.ktx)
 }
