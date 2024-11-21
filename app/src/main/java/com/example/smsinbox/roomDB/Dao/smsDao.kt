@@ -1,11 +1,11 @@
-package roomDB.Dao
+package com.example.smsinbox.roomDB.Dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
-import roomDB.model.SmsSaver
+import com.example.smsinbox.roomDB.model.SmsSaver
 
 @Dao
 interface smsDao {
@@ -16,5 +16,5 @@ interface smsDao {
     fun insetSMS(sms: SmsSaver)
 
     @Delete
-    fun deleteSMS(sms:SmsSaver)
+    fun deleteSMS(sms: SmsSaver)
 }

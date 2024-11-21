@@ -1,10 +1,10 @@
-package ui.viewmodel
+package com.example.smsinbox.ui.viewmodel
 
 import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import roomDB.Dao.smsRepository
-import roomDB.model.SmsSaver
+import com.example.smsinbox.roomDB.Dao.smsRepository
+import com.example.smsinbox.roomDB.model.SmsSaver
 
 class SmsViewModel(private val repository: smsRepository) : ViewModel() {
 

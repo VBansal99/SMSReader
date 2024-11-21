@@ -1,4 +1,4 @@
-package roomDB.model
+package com.example.smsinbox.roomDB.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

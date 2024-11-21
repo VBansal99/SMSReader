@@ -1,10 +1,10 @@
-package ui.adapter
+package com.example.smsinbox.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smsinbox.databinding.ItemRecyclerViewBinding
-import roomDB.model.SmsReader
+import com.example.smsinbox.roomDB.model.SmsReader
 
 class recycler_view_adapter(private var itemList: List<SmsReader>) :
     RecyclerView.Adapter<recycler_view_adapter.ModelViewHolder>() {

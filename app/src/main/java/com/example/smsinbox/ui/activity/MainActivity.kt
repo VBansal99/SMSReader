@@ -1,4 +1,4 @@
-package ui.activity
+package com.example.smsinbox.ui.activity
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -11,13 +11,13 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.smsinbox.databinding.ActivityMainBinding
-import roomDB.Dao.smsRepository
-import roomDB.Dao.smsRoomDatabase
-import roomDB.model.SmsReader
-import roomDB.model.SmsSaver
-import ui.adapter.recycler_view_adapter
-import ui.viewmodel.SmsViewModel
-import ui.viewmodel.SmsViewModelFactory
+import com.example.smsinbox.roomDB.Dao.smsRepository
+import com.example.smsinbox.roomDB.Dao.smsRoomDatabase
+import com.example.smsinbox.roomDB.model.SmsReader
+import com.example.smsinbox.roomDB.model.SmsSaver
+import com.example.smsinbox.ui.adapter.recycler_view_adapter
+import com.example.smsinbox.ui.viewmodel.SmsViewModel
+import com.example.smsinbox.ui.viewmodel.SmsViewModelFactory
 import java.text.SimpleDateFormat
 import java.util.*
 

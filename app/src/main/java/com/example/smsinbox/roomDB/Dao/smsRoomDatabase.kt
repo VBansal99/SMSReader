@@ -1,10 +1,10 @@
-package roomDB.Dao
+package com.example.smsinbox.roomDB.Dao
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import roomDB.model.SmsSaver
+import com.example.smsinbox.roomDB.model.SmsSaver
 
 @Database(entities = [SmsSaver::class], version = 1, exportSchema = false)
 abstract class smsRoomDatabase : RoomDatabase() {
